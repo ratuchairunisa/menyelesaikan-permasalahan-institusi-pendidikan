@@ -43,9 +43,6 @@ Menjalankan notebook analisis:
 ```bash
 jupyter notebook notebook/students_dropout_prediction.ipynb
 ```
-
-Menjalankan prototype machine learning (lihat bagian *Machine Learning Prototype* di bawah).
-
 ---
 
 ## Business Dashboard
@@ -67,8 +64,7 @@ Berkas project dashboard (Tableau Workbook) berada di `dashboard/`. Screenshot p
 dashboard: `dashboard/username_dicoding-dashboard/` (lihat bagian *Catatan Submission*
 di bawah mengenai cara melengkapinya).
 
-> **Link dashboard (Tableau Public / Looker Studio):** _tempel link publik dashboard Anda di
-> sini setelah dipublikasikan, contoh: `https://public.tableau.com/app/profile/.../viz/...`_
+> **Link dashboard (Tableau Public):** [Dashboard Monitoring Dropout Mahasiswa Jaya-Jaya Institute](https://public.tableau.com/views/DashboardMonitoringDropoutMahasiswaJayaJayaInstitute/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ---
 
@@ -86,14 +82,7 @@ streamlit run deployment/predict.py
 ```
 Aplikasi akan terbuka otomatis di `http://localhost:8501`.
 
-### Menjalankan di Streamlit Community Cloud
-1. Push seluruh folder project ini (termasuk folder `model/` yang berisi berkas `.pkl`) ke
-   repository GitHub publik.
-2. Buka [share.streamlit.io](https://share.streamlit.io) dan login dengan akun GitHub.
-3. Klik **New app**, pilih repository ini, branch `main`, dan file path
-   `deployment/predict.py`.
-4. Klik **Deploy**. Streamlit Cloud akan otomatis membaca `requirements.txt` di root folder.
-
+### Streamlit Community Cloud
 > **Link prototype (Streamlit Community Cloud):** _tempel link deployment Anda di sini setelah
 > berhasil deploy, contoh: `https://jaya-jaya-institut-dropout.streamlit.app`_
 
@@ -152,7 +141,7 @@ dan angka dropout dapat ditekan.
 ## Struktur Folder Project
 
 ```
-(Nama folder)/
+ratuchairunisa_dicoding-submission/
 │
 ├── data/
 │   ├── data_raw.csv                       # Dataset asli dari sumber
@@ -175,24 +164,8 @@ dan angka dropout dapat ditekan.
 │
 ├── dashboard/
 │   ├── *.png                              # Chart-chart hasil EDA (dipakai sbg referensi dashboard)
-│   └── (letakkan berkas .twbx Tableau & screenshot dashboard di sini)
+│   └── link tableau public.txt
 │
 ├── requirements.txt
 └── README.md
 ```
-
-## Catatan Submission
-
-- **Notebook** (`notebook/students_dropout_prediction.ipynb`) sudah dijalankan penuh
-  (*run all*) tanpa error dan berisi dokumentasi tahapan menggunakan text cell/markdown.
-- **Dataset final untuk dashboard** tersedia di `data/students_dashboard_final.csv` —
-  gunakan berkas ini (bukan `data_raw.csv`) saat menyambungkan Tableau Public/Looker Studio
-  agar label kolom mudah dipahami reviewer.
-- **Prototype Streamlit** (`deployment/predict.py`) telah diuji dan berjalan tanpa error
-  (HTTP 200 saat dijalankan secara lokal). Lengkapi link deployment Streamlit Community
-  Cloud pada bagian *Machine Learning Prototype* di atas setelah Anda melakukan deploy.
-- Lengkapi juga:
-  - Link dashboard publik (Tableau Public/Looker Studio) pada bagian *Business Dashboard*.
-  - Screenshot dashboard pada folder `dashboard/username_dicoding-dashboard/`.
-  - Video penjelasan singkat (opsional, maks. 5 menit) pada folder
-    `username_dicoding-video/` jika ingin menerapkan saran penilaian tambahan.
