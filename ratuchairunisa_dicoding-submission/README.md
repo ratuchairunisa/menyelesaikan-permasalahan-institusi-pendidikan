@@ -83,9 +83,7 @@ streamlit run deployment/predict.py
 Aplikasi akan terbuka otomatis di `http://localhost:8501`.
 
 ### Streamlit Community Cloud
-> **Link prototype (Streamlit Community Cloud):** _tempel link deployment Anda di sini setelah
-> berhasil deploy, contoh: `https://jaya-jaya-institut-dropout.streamlit.app`_
-
+> **Link prototype (Streamlit Community Cloud):** [Prediksi Risiko Dropout Mahasiswa](https://menyelesaikan-permasalahan-institusi-pendidikan-e78uhauxqxorb7.streamlit.app/)
 ---
 
 ## Conclusion
@@ -97,20 +95,20 @@ Berdasarkan analisis data dan pemodelan yang dilakukan:
    mendapat prioritas penanganan.
 2. **Performa akademik di semester-semester awal** (jumlah SKS yang lulus dan rata-rata nilai
    pada semester 1 & 2) merupakan **prediktor terkuat** terhadap risiko dropout — mahasiswa
-   dengan SKS lulus rendah di semester awal jauh lebih berisiko dropout.
+   dengan SKS lulus rendah di semester awal (Semester 1 dan 2) jauh lebih berisiko dropout.
 3. **Faktor finansial berperan signifikan.** Mahasiswa yang belum melunasi uang kuliah (UKT)
    tepat waktu memiliki proporsi dropout jauh lebih tinggi (±87%) dibanding yang lunas tepat
    waktu (±25%). Penerima beasiswa juga menunjukkan tingkat kelulusan yang lebih baik.
 4. **Usia saat masuk kuliah** turut berkontribusi — mahasiswa yang masuk pada usia lebih tua
    cenderung memiliki risiko dropout/status tidak selesai yang lebih tinggi dibanding yang
    masuk pada usia standar (18-19 tahun).
-5. Model **Random Forest Classifier** yang dibangun mencapai **akurasi ±76%** dan
-   **macro F1-score ±0.70** dalam memprediksi status mahasiswa, sehingga layak digunakan
+5. Model **Random Forest Classifier** yang dibangun mencapai **akurasi 75,71%** dan
+   **macro F1-score 70,18** dalam memprediksi status mahasiswa, sehingga layak digunakan
    sebagai alat bantu deteksi dini — dengan catatan hasil prediksi tetap perlu dikombinasikan
    dengan penilaian pihak akademik, bukan sebagai keputusan final otomatis.
 
 Model dan dashboard pada proyek ini diharapkan membantu Jaya Jaya Institut mendeteksi
-mahasiswa berisiko dropout lebih dini, sehingga bimbingan khusus dapat diberikan tepat waktu
+mahasiswa berisiko dropout lebih dini, sehingga bimbingan khusus bisa diberikan tepat waktu
 dan angka dropout dapat ditekan.
 
 ## Rekomendasi Action Items
@@ -128,44 +126,10 @@ dan angka dropout dapat ditekan.
 4. **Berikan pendampingan khusus (mentoring/onboarding) bagi mahasiswa yang masuk pada usia
    lebih tua** (non-fresh graduate SMA), karena kelompok ini menunjukkan variasi status yang
    lebih besar dan berpotensi membutuhkan dukungan adaptasi yang berbeda.
-5. **Gunakan dashboard secara rutin (mis. mingguan/bulanan)** oleh tim akademik dan
+5. **Gunakan dashboard secara rutin (misal mingguan/bulanan)** oleh tim akademik dan
    kemahasiswaan untuk memonitor tren dropout per program studi/angkatan, sehingga
    intervensi dapat dilakukan secara proaktif, bukan reaktif.
 6. **Integrasikan model prediksi ke dalam proses akademik reguler**, misalnya menjalankan
    prediksi massal (melalui fitur upload CSV pada prototype) setiap akhir semester untuk
    seluruh mahasiswa aktif, lalu menindaklanjuti mahasiswa dengan probabilitas dropout
    tertinggi terlebih dahulu.
-
----
-
-## Struktur Folder Project
-
-```
-ratuchairunisa_dicoding-submission/
-│
-├── data/
-│   ├── data_raw.csv                       # Dataset asli dari sumber
-│   ├── build_dashboard_dataset.py         # Script pembuat dataset final dashboard
-│   └── students_dashboard_final.csv       # Dataset final (readable) untuk dashboard
-│
-├── notebook/
-│   └── students_dropout_prediction.ipynb  # Notebook lengkap: business understanding s.d. modeling
-│
-├── model/
-│   ├── train_model.py                     # Script training model
-│   ├── dropout_model.pkl                  # Model Random Forest terlatih
-│   ├── scaler.pkl                         # StandardScaler terlatih
-│   ├── label_encoder.pkl                  # LabelEncoder untuk target Status
-│   ├── feature_columns.pkl                # Daftar & urutan kolom fitur
-│   └── feature_importance.csv             # Ranking feature importance
-│
-├── deployment/
-│   └── predict.py                         # Prototype Streamlit (siap deploy ke Streamlit Cloud)
-│
-├── dashboard/
-│   ├── *.png                              # Chart-chart hasil EDA (dipakai sbg referensi dashboard)
-│   └── link tableau public.txt
-│
-├── requirements.txt
-└── README.md
-```
