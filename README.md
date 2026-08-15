@@ -1,5 +1,5 @@
 # Menyelesaikan Permasalahan Institusi Pendidikan
-## Prediksi Dropout Mahasiswa — Jaya Jaya Institut
+## Prediksi Dropout Mahasiswa — Jaya Jaya Institute
 
 ## Business Understanding
 
@@ -65,7 +65,7 @@ streamlit run deployment/predict.py
 Aplikasi akan terbuka otomatis di `http://localhost:8501`.
 
 
-> **Link prototype (Streamlit Community Cloud):** [Prediksi Risiko Dropout Mahasiswa](https://menyelesaikan-permasalahan-institusi-pendidikan-e78uhauxqxorb7.streamlit.app/)
+> **Link prototype (Streamlit Community Cloud):** [Prediksi Risiko Dropout Mahasiswa](https://menyelesaikan-permasalahan-institusi-pendidikan-nmevcfyeu2zckj.streamlit.app/)
 
 ---
 
